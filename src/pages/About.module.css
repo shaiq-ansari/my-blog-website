@@ -1,0 +1,181 @@
+.aboutContainer {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero section with background image */
+.aboutSection {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 120px 40px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-left: 0px solid #333;
+}
+
+.aboutSection:hover {
+  transform: scale(1.01);
+  border-left: 4px solid #333;
+}
+
+/* Semi-transparent background image */
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/hero.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+}
+
+/* Dark overlay to improve text readability */
+.aboutSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure text appears above the background */
+.title {
+  position: relative;
+  z-index: 2;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.subtitle {
+  position: relative;
+  z-index: 2;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 700;
+}
+
+.text {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.visionSection,
+.missionSection {
+  margin-bottom: 80px;
+  padding: 50px 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-left: 0px solid #333;
+}
+
+.visionSection:hover,
+.missionSection:hover {
+  transform: scale(1.01);
+  border-left: 4px solid #333;
+}
+
+.teamSection {
+  margin-top: 80px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.teamMember {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-top: 0px solid #333;
+}
+
+.teamMember:hover {
+  transform: scale(1.02);
+  border-top: 4px solid #333;
+}
+
+.teamImage {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #fff;
+}
+
+.memberName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.memberRole {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.1rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .teamImage {
+    width: 140px;
+    height: 140px;
+  }
+
+  .visionSection,
+  .missionSection {
+    padding: 40px 25px;
+  }
+}

@@ -1,0 +1,148 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 3rem;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logoLink {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.1);
+  color: #ffdc80;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.line2 {
+  opacity: 0;
+}
+
+.line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover,
+.navLinks .activeLink {
+  color: #ffdc80;
+  font-weight: bold;
+}
+
+/* Active State */
+.navLinks .activeLink {
+  border-bottom: 2px solid #ffdc80;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 999;
+  }
+
+  .navActive {
+    height: auto;
+    opacity: 1;
+    padding: 1rem 0;
+  }
+
+  .navLinks li {
+    margin: 1rem 0;
+  }
+}
+
+/* Tablet and Desktop Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 0.6rem 2rem;
+  }
+
+  .navLinks {
+    gap: 1.5rem;
+  }
+
+  .logoLink {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+
+  .logoLink {
+    font-size: 1.2rem;
+  }
+
+  .navLinks {
+    font-size: 0.9rem;
+  }
+
+  .hamburger .line {
+    width: 20px;
+    height: 2.5px;
+  }
+}

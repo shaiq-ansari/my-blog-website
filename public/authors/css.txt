@@ -1,0 +1,182 @@
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+.contactFormSection {
+  display: flex;
+  justify-content: center;
+}
+
+.contactForm {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Status Message Styling */
+.statusMessage {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: absolute;
+  top: -40px; /* Positioned above the form */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden; /* Hide by default */
+}
+
+/* Show the status message */
+.statusMessage.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Success message styling */
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+/* Error message styling */
+.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Button animation during submission */
+.submitButton {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #003d80;
+}
+
+.submitButton:disabled {
+  background-color: #0072e5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: block;
+  color: #333;
+}
+
+.inputField,
+.textareaField {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.inputField:focus,
+.textareaField:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.2);
+}
+
+.textareaField {
+  height: 150px;
+  resize: none;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .contactForm {
+    padding: 20px;
+  }
+
+  .inputField,
+  .textareaField {
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactContainer {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .contactForm {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .inputField,
+  .textareaField {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .submitButton {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

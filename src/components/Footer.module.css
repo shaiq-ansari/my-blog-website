@@ -1,0 +1,103 @@
+/* Footer Layout */
+.footer {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around; /* Evenly space the two sections */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Links Section */
+.linksSection {
+  text-align: center;
+}
+
+.heading {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Adjusted spacing for links */
+}
+
+.link {
+  text-decoration: none;
+  color: #ffdc80;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+/* Social Media Section */
+.socialSection {
+  text-align: center;
+}
+
+.socialLinks {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Adjusted spacing for icons */
+}
+
+.socialLinks a {
+  text-decoration: none;
+  color: #ffdc80;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #fff;
+}
+
+/* Copyright Section */
+.copyRight {
+  font-size: 0.8rem;
+  color: #ddd;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    gap: 1rem; /* Add spacing between sections */
+  }
+
+  .links {
+    gap: 0.5rem; /* Reduce spacing for smaller screens */
+  }
+
+  .socialLinks {
+    gap: 0.5rem; /* Reduce spacing for smaller screens */
+  }
+
+  .link, 
+  .socialLinks a {
+    font-size: 0.8rem; /* Adjust font size for smaller screens */
+  }
+
+  .copyRight {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+  }
+}

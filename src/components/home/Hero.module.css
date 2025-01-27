@@ -1,0 +1,89 @@
+.heroContainer {
+  position: relative;
+  background-image: url('/hero.webp'); /* Placeholder image for hero */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden; /* Prevents content from overflowing */
+}
+
+.heroContainer .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% opacity overlay */
+  z-index: 1;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2; /* Ensures text is above the overlay */
+  position: relative;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 2s ease-out; /* Fade-in effect */
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  font-style: italic;
+  animation: fadeIn 3s ease-out; /* Fade-in effect with a delay */
+}
+
+.ctaButton {
+  display: inline-block;  /* Add this line */
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.ctaButton:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);  /* Reduced from 1.5 to 1.05 for subtler effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Enhanced shadow on hover */
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Animation for fading in text */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
