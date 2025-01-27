@@ -23,24 +23,28 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Disable the button while processing
     setIsSubmitting(true);
     setStatusMessage('');
-
+  
+    // Access environment variables using import.meta.env
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+  
+    console.log("Service ID:", serviceId);
+    console.log("Template ID:", templateId);
+    console.log("User ID:", userId);
+  
     try {
       // Send email using EmailJS
-      const response = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        formData,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      );
-
+      const response = await emailjs.send(serviceId, templateId, formData, userId);
+  
       console.log('SUCCESS!', response.status, response.text);
       setStatusMessage('Form submitted successfully ✅');
       setIsSuccess(true);
-
+  
       // Clear form data after submission
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
@@ -55,7 +59,8 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
+  
+  
   return (
     <>
       <Navbar />
