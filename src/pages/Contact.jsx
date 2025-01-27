@@ -31,10 +31,10 @@ const Contact = () => {
     try {
       // Send email using EmailJS
       const response = await emailjs.send(
-        'service_1qhr6io', // Replace with your EmailJS service ID
-        'template_jma16i5', // Replace with your EmailJS template ID
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formData,
-        'qSOJZGKPXYTSzReSB' // Replace with your EmailJS user ID
+        process.env.REACT_APP_EMAILJS_USER_ID
       );
 
       console.log('SUCCESS!', response.status, response.text);
