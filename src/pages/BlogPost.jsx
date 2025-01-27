@@ -50,11 +50,11 @@ const BlogPost = () => {
           </div>
         </div>
 
-        {/* Content Section */}
-        <p className={styles.excerpt}>{blog.excerpt}</p>
-        <div className={styles.content}>
-          <p>{blog.fullContent}</p>
-        </div>
+          {/* Content Section */}
+          <div className={styles.excerpt}>{blog.excerpt}</div>
+          <div className={styles.content}>
+          {blog.fullContent}
+          </div>
 
         {/* Like and Share Section */}
         <div className={styles.interaction}>
@@ -62,12 +62,22 @@ const BlogPost = () => {
             👍 Like ({likes})
           </button>
           <div className={styles.shareButtons}>
-            <a href={`https://instagram.com/share?url=${window.location.href}&text=${blog.title}`} target="_blank" rel="noreferrer">
-              Share on Instagram
-            </a>
-            <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank" rel="noreferrer">
-              Share on Facebook
-            </a>
+          <a
+  href={`https://www.instagram.com/`}
+  target="_blank"
+  rel="noreferrer"
+>
+  Share on Instagram
+</a>
+
+<a
+  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(blog.title)}`}
+  target="_blank"
+  rel="noreferrer"
+>
+  Share on Facebook
+</a>
+
           </div>
         </div>
 

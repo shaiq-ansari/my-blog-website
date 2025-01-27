@@ -33,9 +33,9 @@ const Contact = () => {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const userId = import.meta.env.VITE_EMAILJS_USER_ID;
   
-    console.log("Service ID:", serviceId);
-    console.log("Template ID:", templateId);
-    console.log("User ID:", userId);
+    // console.log("Service ID:", serviceId);
+    // console.log("Template ID:", templateId);
+    // console.log("User ID:", userId);
   
     try {
       // Send email using EmailJS
